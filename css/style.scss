@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+$font-poppins: "Poppins", sans-serif;
+ul.list-items {
+  list-style: none;
+  padding-left: 30px;
+  list-style-image: url("../img/circle-check-solid.svg");
+}
+
+em.invalid {
+  color: #f00;
+}
+
+body {
+  background-color: rgba($color: #a5a3b7, $alpha: 0.3);
+  font-family: $font-poppins;
+}
+.ls-1 {
+  letter-spacing: 1px;
+}
+.container.title-section {
+  max-width: 650px;
+}
+
+.title-section {
+  background-color: #252463;
+  color: #fff;
+}
+.boost-form > .row > div {
+  padding: 30px;
+  border: 2px solid rgba($color: #252463, $alpha: 0.1);
+  box-shadow: 0 0 14px 8px rgba($color: #252463, $alpha: 0.2);
+  background-color: #f3f3f4;
+}
+
+.boost-form form .form-group {
+  text-align: center;
+}
+.boost-form form .form-group label {
+  font-weight: 500;
+}
+.boost-form form input,
+.boost-form form select {
+  border: 1px solid #000;
+  text-align: center;
+  background-color: #e0deef;
+}
