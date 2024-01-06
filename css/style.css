@@ -9,6 +9,19 @@ em.invalid {
   color: #f00;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.order_summary {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.order_summary .title {
+  color: #252463;
+}
+
 body {
   background-color: rgba(165, 163, 183, 0.3);
   font-family: "Poppins", sans-serif;

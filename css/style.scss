@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 $font-poppins: "Poppins", sans-serif;
+$dark-purple: #252463;
 ul.list-items {
   list-style: none;
   padding-left: 30px;
@@ -8,6 +9,16 @@ ul.list-items {
 
 em.invalid {
   color: #f00;
+}
+.text-left {
+  text-align: left;
+}
+.order_summary {
+  font-size: 20px;
+  font-weight: 600;
+}
+.order_summary .title {
+  color: $dark-purple;
 }
 
 body {

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pay Your Boost Bill</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -184,6 +185,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js" integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/additional-methods.min.js" integrity="sha512-TiQST7x/0aMjgVTcep29gi+q5Lk5gVTUPE9XgN0g96rwtjEjLpod4mlBRKWHeBcvGBAEvJBmfDqh2hfMMmg+5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="js/sweetalert2.min.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -192,7 +194,6 @@
                 var minYear = new Date().getFullYear();
                 var month = parseInt($(params.month).val(), 10);
                 var year = parseInt($(params.year).val(), 10);
-                console.table(["current month: " + minMonth, "selected month: " + month]);
                 return (year > minYear) || (year === minYear && month >= minMonth);
                 // return ((year === minYear && month >= minMonth) || year > minYear);
             }, 'Date is invalid.');
@@ -275,10 +276,57 @@
                     $('#second-step').removeClass('d-none');
                 }
             });
+            // work in progress ~ ALHAMDU LILLAH alot of points done.
             $(document).on('submit', '#boostForm', function(e) {
-                // e.preventDefault();
-                // work in progress ~ ALHAMDU LILLAH alot of points done.
-                if ($('#boostForm').valid()) {}
+                e.preventDefault();
+                let formData = $(this).serialize();
+                if ($('#boostForm').valid()) {
+                    $.ajax({
+                        url: 'upload.php',
+                        method: 'post',
+                        data: formData,
+                        success: function(result) {
+                            let res = JSON.parse(result);
+                            console.log(res);
+                            setTimeout(() => {
+                                Swal.fire({
+                                    title: "ORDER SUMMARY",
+                                    icon: "success",
+                                    html: `
+                                    <div class="container order_summary">
+                                        <div class="row text-left">
+                                            <div class="col-6">
+                                                <span class="title">Phone Number:</span>
+                                            </div>
+                                            <div class="col-6">
+                                                ${res.phNum}
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                <span class="title">Amount:</span>
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                ${res.amount}
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                <span class="title">Processing Fee:</span>
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                ${res.processFee}
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                <span class="title">Total:</span>
+                                            </div>
+                                            <div class="col-6 mt-2">
+                                                ${res.total}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    `
+                                });
+                            }, 1000);
+                        }
+                    })
+                }
             });
             $(document).on('click', '.go-back', function(e) {
                 e.preventDefault();
