@@ -305,25 +305,25 @@
                                                 <span class="title">Amount:</span>
                                             </div>
                                             <div class="col-6 mt-2">
-                                                ${res.amount}
+                                                $${res.amount}
                                             </div>
                                             <div class="col-6 mt-2">
                                                 <span class="title">Processing Fee:</span>
                                             </div>
                                             <div class="col-6 mt-2">
-                                                ${res.processFee}
+                                                $${res.processFee}
                                             </div>
                                             <div class="col-6 mt-2">
                                                 <span class="title">Total:</span>
                                             </div>
                                             <div class="col-6 mt-2">
-                                                ${res.total}
+                                                $${res.total}
                                             </div>
                                             <div class="col-12 text-center mt-3">
                                                 <span class="title bg">Total Charges</span>
                                             </div>
                                             <div class="col-12 text-center total-amount">
-                                                ${res.total} USD
+                                                $${res.total} USD
                                             </div>
                                         </div>
                                     </div>

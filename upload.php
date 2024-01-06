@@ -7,6 +7,10 @@ $amount = $_POST['amount'];
 $processFee = 5;
 $total = $amount + $processFee;
 
+$amount = number_format((float)$amount, 2, '.', '');
+$processFee = number_format((float)$processFee, 2, '.', '');
+$total = number_format((float)$total, 2, '.', '');
+
 // For Data Insert
 $columns = "";
 $values = "";
