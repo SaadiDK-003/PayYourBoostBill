@@ -114,7 +114,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                 let id = $(this).data('id');
 
                 $.ajax({
-                    url: 'edit-del.php',
+                    url: 'del.php',
                     method: 'post',
                     data: {
                         del: id
