@@ -20,6 +20,13 @@ em.invalid {
 .order_summary .title {
   color: $dark-purple;
 }
+.order_summary .title.bg {
+  font-size: 30px;
+  color: #000;
+}
+.total-amount {
+  font-size: 30px;
+}
 
 body {
   background-color: rgba($color: #a5a3b7, $alpha: 0.3);

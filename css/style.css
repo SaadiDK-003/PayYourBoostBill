@@ -22,6 +22,15 @@ em.invalid {
   color: #252463;
 }
 
+.order_summary .title.bg {
+  font-size: 30px;
+  color: #000;
+}
+
+.total-amount {
+  font-size: 30px;
+}
+
 body {
   background-color: rgba(165, 163, 183, 0.3);
   font-family: "Poppins", sans-serif;
