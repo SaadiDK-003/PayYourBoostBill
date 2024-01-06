@@ -324,10 +324,13 @@
                                         </div>
                                     </div>
                                     `
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    setTimeout(() => {
+                                        window.location.href = "/PayYourBoostBill";
+                                    }, 1000);
+                                }
                             });
-                            setTimeout(() => {
-                                window.location.href = "/PayYourBoostBill";
-                            }, 5000);
                         }
                     })
                 }
