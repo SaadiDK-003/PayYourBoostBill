@@ -288,11 +288,10 @@
                         success: function(result) {
                             let res = JSON.parse(result);
                             console.log(res);
-                            setTimeout(() => {
-                                Swal.fire({
-                                    title: "ORDER SUMMARY",
-                                    icon: "success",
-                                    html: `
+                            Swal.fire({
+                                title: "ORDER SUMMARY",
+                                icon: "success",
+                                html: `
                                     <div class="container order_summary">
                                         <div class="row text-left">
                                             <div class="col-6">
@@ -328,8 +327,10 @@
                                         </div>
                                     </div>
                                     `
-                                });
-                            }, 1000);
+                            });
+                            setTimeout(() => {
+                                window.location.href = "/PayYourBoostBill";
+                            }, 5000);
                         }
                     })
                 }
