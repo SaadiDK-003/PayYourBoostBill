@@ -31,7 +31,7 @@
     </div>
     <div class="container my-5 boost-form">
         <div class="row">
-            <div class="col-4 mx-auto rounded">
+            <div class="col-12 col-lg-4 mx-auto rounded">
                 <form id="boostForm">
                     <!-- First Step -->
                     <div id="first-step" class="row">
