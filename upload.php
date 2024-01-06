@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect('localhost', 'root', '', 'payyourboostbill');
+require_once 'config.php';
 
 // For Summary
 $phNum = $_POST['mobileNumber'];
