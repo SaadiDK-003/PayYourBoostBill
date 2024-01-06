@@ -18,7 +18,7 @@
     <div class="container mt-5 title-section py-3 rounded">
         <div class="row">
             <div class="col-4 d-flex align-items-center justify-content-center">
-                <img src="https://picsum.photos/200" alt="img">
+                <img class="w-100" src="https://picsum.photos/200" alt="img">
             </div>
             <div class="col-8 d-flex flex-column justify-content-center">
                 <h2>Instant Mobile Recharge</h2>
