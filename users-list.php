@@ -126,7 +126,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                             showConfirmButton: false
                         });
                         setTimeout(() => {
-                            window.location.href = "http://localhost/PayYourBoostBill/users-list.php";
+                            window.location.href = "/PayYourBoostBill/users-list.php";
                         }, 1800);
                     },
                     error: function(err) {
