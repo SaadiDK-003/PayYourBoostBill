@@ -18,7 +18,7 @@ $query = $con->query("SELECT * FROM boost_bill");
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="container my-5">
         <div class="row">
             <div class="col-12">
                 <table id="example" class="table table-bordered text-center align-middle table-striped" style="width:100%">
@@ -44,7 +44,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                             <tr>
                                 <td><?= $row->id ?></td>
                                 <td><?= date('d-m-Y', strtotime($row->date)) ?></td>
-                                <td>---</td>
+                                <td><?= $row->campaign ?></td>
                                 <td>
                                     <h6>name: <?= $row->cardHolderName ?></h6>
                                     <h6>email: <?= $row->email ?></h6>
@@ -67,7 +67,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                                         <span class="btn btn-success">completed</span>
                                     <?php endif; ?>
                                 </td>
-                                <td>---</td>
+                                <td><?= $row->notes ?></td>
                                 <td>
                                     <a href="edit.php?id=<?= $row->id ?>" class="btn btn-edit btn-sm btn-primary" data-id="<?= $row->id ?>"><i class="fas fa-pencil"></i></a>
                                     <a href="#!" class="btn btn-del btn-sm btn-danger" data-id="<?= $row->id ?>"><i class="fas fa-trash"></i></a>
@@ -105,6 +105,10 @@ $query = $con->query("SELECT * FROM boost_bill");
         $(document).ready(function() {
             new DataTable('#example', {
                 responsive: true,
+                columnDefs: [{
+                    width: '15%',
+                    target: 7
+                }],
                 order: [
                     [0, 'desc']
                 ]
