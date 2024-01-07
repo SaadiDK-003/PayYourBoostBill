@@ -36,6 +36,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+textarea {
+  resize: none;
+}
+
 .ls-1 {
   letter-spacing: 1px;
 }

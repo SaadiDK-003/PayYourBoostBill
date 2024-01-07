@@ -32,6 +32,11 @@ body {
   background-color: rgba($color: #a5a3b7, $alpha: 0.3);
   font-family: $font-poppins;
 }
+
+textarea {
+  resize: none;
+}
+
 .ls-1 {
   letter-spacing: 1px;
 }
