@@ -106,7 +106,7 @@ $query = $con->query("SELECT * FROM boost_bill");
             new DataTable('#example', {
                 responsive: true,
                 columnDefs: [{
-                    width: '15%',
+                    width: '18%',
                     target: 7
                 }],
                 order: [

@@ -27,15 +27,9 @@ $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
                 <div class="col-12 col-lg-8 mx-auto rounded">
                     <?php
                     if (isset($_POST['mobileNumber']) && isset($_POST['email'])) {
-                        // $newVal = $_POST['amount'] + $processingFee;
                         $values = array();
                         foreach ($_POST as $key => $value) {
-                            // if ($key == 'amount') {
-                            //     $_POST[$key] = $newVal;
-                            //     $values[] .= "$key = '" . $newVal . "'";
-                            // } else {
                             $values[] .= "$key = '" . $value . "'";
-                            // }
                         }
                         $updQ = $con->query("UPDATE `boost_bill` SET " . join(', ', $values) . " WHERE `id`='$eid'");
                         if ($updQ) {
