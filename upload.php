@@ -4,7 +4,7 @@ require_once 'config.php';
 // For Summary
 $phNum = $_POST['mobileNumber'];
 $amount = $_POST['amount'];
-$processFee = 5;
+$processFee = $processingFee;
 $total = $amount + $processFee;
 
 $amount = number_format((float)$amount, 2, '.', '');

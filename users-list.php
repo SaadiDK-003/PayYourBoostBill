@@ -52,7 +52,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                                 <td>
                                     <h6>phone: <?= $row->cellNumber ?></h6>
                                     <h6>pin code: <?= $row->boostPin ?></h6>
-                                    <h6>amount due: $<?= ($row->amount + 5) ?></h6>
+                                    <h6>amount due: $<?= ($row->amount + $processingFee) ?></h6>
                                 </td>
                                 <td>
                                     <h6>Expiry: <?= $month . '/' . $row->cardYear ?></h6>
@@ -69,7 +69,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                                 </td>
                                 <td>---</td>
                                 <td>
-                                    <a href="#!" class="btn btn-edit btn-sm btn-primary" data-id="<?= $row->id ?>"><i class="fas fa-pencil"></i></a>
+                                    <a href="edit.php?id=<?= $row->id ?>" class="btn btn-edit btn-sm btn-primary" data-id="<?= $row->id ?>"><i class="fas fa-pencil"></i></a>
                                     <a href="#!" class="btn btn-del btn-sm btn-danger" data-id="<?= $row->id ?>"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
