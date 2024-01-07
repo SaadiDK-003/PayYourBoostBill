@@ -188,6 +188,29 @@ $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
                                     <input type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com" value="<?= $eData->email ?>" required>
                                 </div>
                             </div>
+                            <div class="col-12 col-lg-6 mt-3">
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select name="status" id="status" class="form-control" required>
+                                        <option value="<?= $eData->status ?>" selected hidden><?= $eData->status ?></option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                        <option value="Completed">Completed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 mt-3">
+                                <div class="form-group">
+                                    <label for="campaign">Campaign</label>
+                                    <input type="campaign" name="campaign" id="campaign" class="form-control" placeholder="Campaign" value="<?= $eData->campaign ?>" required>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <div class="form-group">
+                                    <label for="notes">Notes</label>
+                                    <textarea type="notes" name="notes" id="notes" class="form-control" placeholder="Enter Notes" rows="3" required><?= $eData->notes ?></textarea>
+                                </div>
+                            </div>
                             <div class="col-6 mt-4">
                                 <a href="/PayYourBoostBill/users-list.php" class="btn btn-secondary w-100">Back</a>
                             </div>
