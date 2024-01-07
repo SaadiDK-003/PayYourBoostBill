@@ -67,7 +67,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                                         <span class="btn btn-success">completed</span>
                                     <?php endif; ?>
                                 </td>
-                                <td><?= $row->notes ?></td>
+                                <td><?= nl2br($row->notes) ?></td>
                                 <td>
                                     <a href="edit.php?id=<?= $row->id ?>" class="btn btn-edit btn-sm btn-primary" data-id="<?= $row->id ?>"><i class="fas fa-pencil"></i></a>
                                     <a href="#!" class="btn btn-del btn-sm btn-danger" data-id="<?= $row->id ?>"><i class="fas fa-trash"></i></a>
