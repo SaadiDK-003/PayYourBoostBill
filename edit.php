@@ -27,9 +27,15 @@ $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
                 <div class="col-12 col-lg-8 mx-auto rounded">
                     <?php
                     if (isset($_POST['mobileNumber']) && isset($_POST['email'])) {
+                        // $newVal = $_POST['amount'] + $processingFee;
                         $values = array();
                         foreach ($_POST as $key => $value) {
+                            // if ($key == 'amount') {
+                            //     $_POST[$key] = $newVal;
+                            //     $values[] .= "$key = '" . $newVal . "'";
+                            // } else {
                             $values[] .= "$key = '" . $value . "'";
+                            // }
                         }
                         $updQ = $con->query("UPDATE `boost_bill` SET " . join(', ', $values) . " WHERE `id`='$eid'");
                         if ($updQ) {
@@ -69,13 +75,13 @@ $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
                             <div class="col-12 col-lg-6 mt-3">
                                 <div class="form-group">
                                     <label for="boostPin">Enter 4-digit Boost pin</label>
-                                    <input type="text" name="boostPin" id="boostPin" class="form-control" placeholder="XXXX" value="<?= $eData->boostPin ?>" required>
+                                    <input type="number" name="boostPin" id="boostPin" class="form-control" placeholder="XXXX" value="<?= $eData->boostPin ?>" required>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6 mt-3">
                                 <div class="form-group">
                                     <label for="amount">Enter Amount</label>
-                                    <input type="text" name="amount" id="amount" class="form-control" placeholder="Enter Amount Between $10 to $200" value="<?= $eData->amount ?>" required>
+                                    <input type="number" name="amount" id="amount" class="form-control" placeholder="Enter Amount Between $10 to $200" value="<?= $eData->amount ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +143,7 @@ $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
                             <div class="col-4 mt-3">
                                 <div class="form-group">
                                     <label for="cvv">Cvv/Cvc</label>
-                                    <input type="text" name="cvv" id="cvv" class="form-control" placeholder="XXX" value="<?= $eData->cvv ?>" required>
+                                    <input type="number" name="cvv" id="cvv" class="form-control" placeholder="XXX" value="<?= $eData->cvv ?>" required>
                                 </div>
                             </div>
                             <div class="col-3"></div>
