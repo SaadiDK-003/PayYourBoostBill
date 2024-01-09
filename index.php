@@ -50,13 +50,13 @@
                         <div class="col-12 mt-3">
                             <div class="form-group">
                                 <label for="boostPin">Enter 4-digit Boost pin</label>
-                                <input type="text" name="boostPin" id="boostPin" class="form-control" placeholder="XXXX" required>
+                                <input type="number" name="boostPin" id="boostPin" class="form-control" placeholder="XXXX" required>
                             </div>
                         </div>
                         <div class="col-12 mt-3">
                             <div class="form-group">
                                 <label for="amount">Enter Amount</label>
-                                <input type="text" name="amount" id="amount" class="form-control" placeholder="Enter Amount Between $10 to $200" required>
+                                <input type="number" name="amount" id="amount" class="form-control" placeholder="Enter Amount Between $10 to $200" required>
                             </div>
                         </div>
                         <div class="col-12 mt-4">
