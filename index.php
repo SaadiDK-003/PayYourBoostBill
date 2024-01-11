@@ -12,20 +12,6 @@
 
 <body>
 
-    <div class="container mt-5 title-section py-3 rounded">
-        <div class="row">
-            <div class="col-4 d-flex align-items-center justify-content-center">
-                <img class="w-100" src="https://picsum.photos/200" alt="img">
-            </div>
-            <div class="col-8 d-flex flex-column justify-content-center">
-                <h2>Instant Mobile Recharge</h2>
-                <ul class="list-items">
-                    <li class="mb-2">Online available 24/7</li>
-                    <li>Easy & secure payments</li>
-                </ul>
-            </div>
-        </div>
-    </div>
     <div class="container my-5 boost-form">
         <div class="row">
             <div class="col-12 col-lg-4 mx-auto rounded">
