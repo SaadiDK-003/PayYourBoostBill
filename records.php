@@ -131,7 +131,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                             showConfirmButton: false
                         });
                         setTimeout(() => {
-                            window.location.href = "/PayYourBoostBill/records.php";
+                            window.location.href = "/clientarea/records.php";
                         }, 1800);
                     },
                     error: function(err) {

@@ -408,7 +408,7 @@
                             }).then((result) => {
                                 if (result.isConfirmed) {
                                     setTimeout(() => {
-                                        window.location.href = "/PayYourBoostBill";
+                                        window.location.href = "/clientarea";
                                     }, 1000);
                                 }
                             });

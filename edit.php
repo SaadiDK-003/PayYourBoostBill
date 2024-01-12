@@ -45,7 +45,7 @@ $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
                                     <h4 class="alert alert-success">Updated Successfully.</h4>
                                     <script>
                                         setTimeout(() => {
-                                            window.location.href = "/PayYourBoostBill/records.php";
+                                            window.location.href = "/clientarea/records.php";
                                         }, 1000);
                                     </script>
                                 </div>
@@ -259,7 +259,7 @@ $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
                                 </div>
                             </div>
                             <div class="col-6 mt-4">
-                                <a href="/PayYourBoostBill/records.php" class="btn btn-secondary w-100">Back</a>
+                                <a href="/clientarea/records.php" class="btn btn-secondary w-100">Back</a>
                             </div>
                             <div class="col-6 mt-4">
                                 <button type="submit" class="btn btn-primary w-100">Update</button>
@@ -290,7 +290,7 @@ $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
                     <h2>No Record Found!</h2>
                 </div>
                 <div class="col-12">
-                    <a href="/PayYourBoostBill/records.php" class="btn btn-primary w-100">Go Back</a>
+                    <a href="/clientarea/records.php" class="btn btn-primary w-100">Go Back</a>
                 </div>
             </div>
         </div>
