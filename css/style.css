@@ -31,6 +31,11 @@ em.invalid {
   font-size: 30px;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -43,7 +48,7 @@ input[type=number] {
 }
 
 body {
-  background-color: rgba(165, 163, 183, 0.3);
+  background-color: #ecebf3;
   font-family: "Poppins", sans-serif;
 }
 
@@ -83,5 +88,54 @@ textarea {
 .boost-form form select {
   border: 1px solid #000;
   text-align: center;
-  background-color: #ECEBF3;
+  background-color: #ecebf3;
+}
+
+.img-container {
+  padding: 10px;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+  margin-top: 20px;
+  background: #fff;
+}
+
+.terms-content {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ecebf3;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+
+.checkbox-container {
+  position: relative;
+}
+
+.terms-content input[id=accept] {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 2px;
+  left: 2px;
+}
+
+.checkbox-container em {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+}
+
+label[for=accept] {
+  text-indent: 30px;
+  text-align: justify;
+}
+
+.terms-content h5 {
+  font-size: 18px;
+}
+
+.terms-content .links a {
+  font-weight: bold;
+  margin-top: 5px;
+  display: block;
 }/*# sourceMappingURL=style.css.map */

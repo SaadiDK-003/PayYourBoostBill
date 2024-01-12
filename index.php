@@ -36,13 +36,13 @@
                         <div class="col-12 mt-3">
                             <div class="form-group">
                                 <label for="boostPin">Enter 4-digit Boost pin</label>
-                                <input type="number" name="boostPin" id="boostPin" class="form-control" placeholder="XXXX" required>
+                                <input type="number" maxlength="4" name="boostPin" id="boostPin" class="form-control" placeholder="XXXX" required>
                             </div>
                         </div>
                         <div class="col-12 mt-3">
                             <div class="form-group">
                                 <label for="amount">Enter Amount</label>
-                                <input type="number" name="amount" id="amount" class="form-control" placeholder="Enter Amount Between $10 to $200" required>
+                                <input type="number" min="10" max="200" name="amount" id="amount" class="form-control" placeholder="Enter Amount Between $10 to $200" required>
                             </div>
                         </div>
                         <div class="col-12 mt-4">
@@ -71,18 +71,18 @@
                                 <label for="cardMonth">Month</label>
                                 <select type="text" name="cardMonth" id="cardMonth" class="form-control" required>
                                     <option selected hidden value="">Month</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
+                                    <option value="1">Jan</option>
+                                    <option value="2">Feb</option>
+                                    <option value="3">Mar</option>
+                                    <option value="4">Apr</option>
+                                    <option value="5">May</option>
+                                    <option value="6">Jun</option>
+                                    <option value="7">Jul</option>
+                                    <option value="8">Aug</option>
+                                    <option value="9">Sep</option>
+                                    <option value="10">Oct</option>
+                                    <option value="11">Nov</option>
+                                    <option value="12">Dec</option>
                                 </select>
                             </div>
                         </div>
@@ -107,14 +107,14 @@
                         <div class="col-4 mt-3">
                             <div class="form-group">
                                 <label for="cvv">Cvv/Cvc</label>
-                                <input type="number" name="cvv" id="cvv" class="form-control" placeholder="XXX" required>
+                                <input type="number" name="cvv" maxlength="4" id="cvv" class="form-control" placeholder="XXX" required>
                             </div>
                         </div>
                         <div class="col-3"></div>
                         <div class="col-6 mt-3">
                             <div class="form-group">
                                 <label for="zipCode">zipCode</label>
-                                <input type="text" name="zipCode" id="zipCode" class="form-control" placeholder="XXXXX" required>
+                                <input type="text" name="zipCode" maxlength="5" id="zipCode" class="form-control" placeholder="XXXXX" required>
                             </div>
                         </div>
                         <div class="col-3"></div>
@@ -199,6 +199,26 @@
                                 <input type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com" required>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="img-container">
+                                <img src="img/payments.png" alt="payments">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="terms-content">
+                                <h5>Disclaimer: Please Read and Accept</h5>
+                                <div class="checkbox-container">
+                                    <input type="checkbox" name="accept" id="accept" required>
+                                    <label for="accept">
+                                        I hereby authorize one the bill payment is successfully paid and completed by the carrier on the phone number provided by you, the amount paid is non-refundable.
+                                    </label>
+                                </div>
+                                <div class="links">
+                                    <a href="#!">Return & Refund Policy</a>
+                                    <a href="#!">Terms & Condition</a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-6 mt-3">
                             <a href="#!" class="btn btn-primary go-back w-100">Back</a>
                         </div>
@@ -227,6 +247,34 @@
                 return (year > minYear) || (year === minYear && month >= minMonth);
                 // return ((year === minYear && month >= minMonth) || year > minYear);
             }, 'Date is invalid.');
+
+            $('#mobileNumber, #renterMobileNumber').on('input', function() {
+                let inputValue = $(this).val();
+                // inputValue = inputValue.replace(/\D/g, '');
+                inputValue = inputValue.substring(0, 17);
+                $(this).val(inputValue);
+            });
+
+            $('#boostPin').on('input', function() {
+                let inputValue = $(this).val();
+                inputValue = inputValue.replace(/\D/g, '');
+                inputValue = inputValue.substring(0, 4);
+                $(this).val(inputValue);
+            });
+
+            $('#cardNumber').on('input', function() {
+                let inputValue = $(this).val();
+                inputValue = inputValue.replace(/\D/g, '');
+                inputValue = inputValue.substring(0, 16);
+                $(this).val(inputValue);
+            });
+
+            $('#amount').on('input', function() {
+                let inputValue = $(this).val();
+                if (inputValue > 200) {
+                    $(this).val(200);
+                }
+            });
 
             $('#boostForm').validate({
                 errorClass: "invalid",
@@ -317,7 +365,7 @@
                         data: formData,
                         success: function(result) {
                             let res = JSON.parse(result);
-                            console.log(res);
+                            // console.log(result);
                             Swal.fire({
                                 title: "ORDER SUMMARY",
                                 icon: "success",
