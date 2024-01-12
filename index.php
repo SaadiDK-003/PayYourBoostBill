@@ -255,7 +255,7 @@
                 $(this).val(inputValue);
             });
 
-            $('#boostPin').on('input', function() {
+            $('#boostPin, #cvv').on('input', function() {
                 let inputValue = $(this).val();
                 inputValue = inputValue.replace(/\D/g, '');
                 inputValue = inputValue.substring(0, 4);
