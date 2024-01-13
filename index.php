@@ -51,6 +51,14 @@
                     </div>
                     <!-- Second Step -->
                     <div id="second-step" class="row d-none">
+                        <div class="col-6">
+                            <h5 class="getPhone fz14"></h5>
+                            <h5 class="getPercentage fz14"></h5>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="getAmount fz14 text-right"></h5>
+                            <h5 class="getTotal fz14 text-right"></h5>
+                        </div>
                         <div class="col-12">
                             <h3 class="text-center fw-bold ls-1">Payment Information</h3>
                         </div>
@@ -63,7 +71,7 @@
                         <div class="col-12 mt-3">
                             <div class="form-group">
                                 <label for="cardNumber">Card Number</label>
-                                <input type="text" name="cardNumber" id="cardNumber" class="form-control" placeholder="4242424242424242" required>
+                                <input type="text" name="cardNumber" id="cardNumber" class="form-control" placeholder="4649519921020300" required>
                             </div>
                         </div>
                         <div class="col-4 mt-3">
@@ -91,16 +99,16 @@
                                 <label for="cardYear">Year</label>
                                 <select type="text" name="cardYear" id="cardYear" class="form-control" required>
                                     <option selected hidden value="">Year</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
-                                    <option value="2021">2021</option>
-                                    <option value="2022">2022</option>
-                                    <option value="2023">2023</option>
                                     <option value="2024">2024</option>
                                     <option value="2025">2025</option>
                                     <option value="2026">2026</option>
                                     <option value="2027">2027</option>
                                     <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                    <option value="2031">2031</option>
+                                    <option value="2032">2032</option>
+                                    <option value="2033">2033</option>
                                 </select>
                             </div>
                         </div>
@@ -214,8 +222,8 @@
                                     </label>
                                 </div>
                                 <div class="links">
-                                    <a href="#!">Return & Refund Policy</a>
-                                    <a href="#!">Terms & Condition</a>
+                                    <a href="https://payyourboostbill.com/return-refund-policy/" target="_blank">Return & Refund Policy</a>
+                                    <a href="https://payyourboostbill.com/terms-and-conditions/" target="_blank">Terms & Condition</a>
                                 </div>
                             </div>
                         </div>
@@ -352,9 +360,18 @@
                 if ($('#boostForm').valid()) {
                     $(this).parents('#first-step').addClass('d-none');
                     $('#second-step').removeClass('d-none');
+
+                    let getPhone = $('#mobileNumber').val();
+                    let amount = +$('#amount').val();
+                    let percentage = (amount * 0.1);
+                    let total = amount + percentage;
+
+                    $('.getPhone').html(getPhone);
+                    $('.getPercentage').html('Processing Fee: $' + percentage.toFixed(2));
+                    $('.getAmount').html('$' + amount.toFixed(2));
+                    $('.getTotal').html('Net Pay: $' + total.toFixed(2));
                 }
             });
-            // work in progress ~ ALHAMDU LILLAH alot of points done.
             $(document).on('submit', '#boostForm', function(e) {
                 e.preventDefault();
                 let formData = $(this).serialize();

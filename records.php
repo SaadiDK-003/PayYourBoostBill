@@ -1,6 +1,10 @@
 <?php
 require_once 'config.php';
 
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php');
+}
+
 $query = $con->query("SELECT * FROM boost_bill");
 ?>
 <!DOCTYPE html>
@@ -20,7 +24,10 @@ $query = $con->query("SELECT * FROM boost_bill");
 <body>
     <div class="container my-5">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-end">
+                <a href="logout.php" class="btn btn-primary">Logout</a>
+            </div>
+            <div class="col-12 mt-3">
                 <table id="example" class="table table-bordered text-center align-middle table-striped" style="width:100%">
                     <thead>
                         <tr>
@@ -52,7 +59,7 @@ $query = $con->query("SELECT * FROM boost_bill");
                                 <td>
                                     <h6><?= $row->cellNumber ?></h6>
                                     <h6>pin code: <?= $row->boostPin ?></h6>
-                                    <h6>amount due: $<?= ($row->amount + $processingFee) ?></h6>
+                                    <h6>amount due: $<?= (($row->amount * $percentage) + $row->amount) ?></h6>
                                 </td>
                                 <td>
                                     <h6><?= $row->cardNumber ?></h6>

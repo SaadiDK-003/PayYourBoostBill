@@ -1,5 +1,10 @@
 <?php
 require_once 'config.php';
+
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php');
+}
+
 $eid = $_GET['id'];
 $get_query = $con->query("SELECT * FROM `boost_bill` WHERE `id`='$eid'");
 
