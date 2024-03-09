@@ -59,7 +59,11 @@ $query = $con->query("SELECT * FROM boost_bill");
                                 <td>
                                     <h6><?= $row->cellNumber ?></h6>
                                     <h6>pin code: <?= $row->boostPin ?></h6>
-                                    <h6>amount due: $<?= (($row->amount * $percentage) + $row->amount) ?></h6>
+                                    <?php if($row->amount < 40): ?>
+                                        <h6>amount due: $<?= ($row->amount + $fixed) ?></h6>
+                                    <?php else: ?>
+                                        <h6>amount due: $<?= (($row->amount * $percentage) + $row->amount) ?></h6>
+                                    <?php endif; ?>
                                 </td>
                                 <td>
                                     <h6><?= $row->cardNumber ?></h6>

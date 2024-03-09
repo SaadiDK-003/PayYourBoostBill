@@ -363,7 +363,12 @@
 
                     let getPhone = $('#mobileNumber').val();
                     let amount = +$('#amount').val();
-                    let percentage = (amount * 0.1);
+                    let percentage = 0;
+                    if(amount < 40) {
+                         percentage = 3.99;
+                    } else {
+                         percentage = (amount * 0.1);
+                    }
                     let total = amount + percentage;
 
                     $('.getPhone').html(getPhone);

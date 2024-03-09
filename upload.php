@@ -4,7 +4,11 @@ require_once 'config.php';
 // For Summary
 $phNum = $_POST['mobileNumber'];
 $amount = $_POST['amount'];
-$processFee = $amount * $percentage;
+if($amount < 40){
+    $processFee = $fixed;
+} else {
+    $processFee = $amount * $percentage;
+}
 $total = $amount + $processFee;
 
 $amount = number_format((float)$amount, 2, '.', '');
